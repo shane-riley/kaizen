@@ -2,7 +2,9 @@
 
 My repository of coursework, practice problems and 'continuous improvement'. This repo includes all code written that is not copyright for research, employment, or wrapped into personal or team projects.
 
-The purpose of storing this code is to witness my own growth as a programmer, to use as motivation to keep striving to improve
+The purpose of storing this code is to witness my own growth as a programmer, to use as motivation to keep striving to improve.
+
+__NOTE: THIS REPO IS STILL UNDER CONSTRUCTION__
 
 ![hiking_image](img/repo_img.jpg)
 
