@@ -1,0 +1,23 @@
+Shane Riley
+CS 0447 -- Prof. Oliveria
+Lab 1
+
+A.1
+Hex/Binary/Decimal/Octal
+0x1CF/11101111/463/717
+0x1A8/110101000/424/0650
+0x165/101100101/357/545
+0x15CD7/10101110011010111/37395/256327
+0x256/1001010110/598/1126
+0x200/1000000000/512/1000
+
+B.1
+Sequence/Unsigned/sign-magnitude/1's complement/2's complement
+00000101/+5/+5/+5/+5
+11110001/+241/-113/-14/-15
+01010011/+83/+83/+83/+83
+10000000/+128/-0/-127/-128
+11111111/+255/-127/-0/-1
+
+C.1
+When v0 is 1, the syscall is "print integer"

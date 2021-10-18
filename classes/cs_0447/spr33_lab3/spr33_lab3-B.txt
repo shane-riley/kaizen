@@ -1,0 +1,10 @@
+Shane Riley
+CS 0447 -- Prof. Oliveria
+Lab 3
+
+B.1: a is 0x78563412
+B.2: 0x56 is at 0x10010002
+B.3: b is 0x12345678
+B.4: 0x12 is the most significant byte
+B.5: The byte value 0x12 (most significant) has the greatest address.
+B.6: Since the simulator loads the most significant byte at the greatest address, the simulator is big endian.

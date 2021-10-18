@@ -1,0 +1,33 @@
+Name: Shane Riley
+Class: CS 0447
+
+States:
+
+00: No trailing 1's
+01: 1 trailing 1
+10: 2 trailing 1's
+11: '011' pattern found
+
+
+(State, Input) => (NewState):
+
+| State_1 | State_0 | Input | NewState_1 | NewState_0 |
+|---------|---------|-------|------------|------------|
+| 0       | 0       | 0     | 0          | 0          |
+| 0       | 1       | 0     | 0          | 0          |
+| 1       | 0       | 0     | 1          | 1          |
+| 1       | 1       | 0     | 0          | 0          |
+| 0       | 0       | 1     | 0          | 1          |
+| 0       | 1       | 1     | 1          | 0          |
+| 1       | 0       | 1     | 1          | 0          |
+| 1       | 1       | 1     | 0          | 1          |
+
+
+(State) => (Output):
+
+| State_1 | State_0 | Output |
+|---------|---------|--------|
+| 0       | 0       | 0      |
+| 0       | 1       | 0      |
+| 1       | 0       | 0      |
+| 1       | 1       | 1      |
