@@ -24,6 +24,7 @@ Folders:
 - os: Operating systems
 - ml: Machine learning
 - cv: Computer vision
+- mech: Mechatronics
 
 
 ## problems
