@@ -1,0 +1,20 @@
+results1.txt
+Author: Shane Riley
+
+STDOUT from compare_representations.m:
+
+Train Accuracies:
+Level 0		Level 1		Pyramid
+0.3975		0.6538		0.6737
+
+Test Accuracies:
+Level 0		Level 1		Pyramid
+0.3925		0.5450		0.5625
+
+The accuracies shown from the SVM models are consistent with expectations.
+The level 0 representations contain bag-of-words representations for the whole
+image, without any regard for location within the image. Level 1 contains this
+information, while the pyramid contains everything. That is why the pyramid
+representation outperforms both others--it is capturing additional useful information.
+Additionally, it can be seen that the training accuracies are better than the
+test accuracies, which is typical of any trained model (in this case, SVM).

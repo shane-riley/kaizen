@@ -1,0 +1,23 @@
+answers.txt
+Author: Shane Riley
+Course: Course Name Removed
+Homework 1
+
+Problem 2:
+Add time using loop: 0.016499 s
+
+Problem 3:
+Add time vectorized: 0.00093 s
+
+Problem 12:
+Num rows: 750 
+Num columns: 1500 
+Num channels: 3 
+
+Problem 14:
+Number of pixels with value 6: 12 
+
+Problem 15:
+(r,c) of darkest pixel: (604,1290) 
+
+Completed run.

@@ -1,0 +1,83 @@
+part_iv
+     1
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 1 (until FC6): 0.391964
+     2
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 2 (until FC6): 0.340179
+     3
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 3 (until FC6): 0.327679
+     4
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 4 (until FC6): 0.352679
+     5
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 5 (until FC6): 0.395536
+     6
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 6 (until FC6): 0.343750
+     7
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 7 (until FC6): 0.375000
+     8
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 8 (until FC6): 0.376786
+     9
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 9 (until FC6): 0.309821
+    10
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of frozen model 10 (until FC6): 0.347321
+Mean accuracy (until FC6, frozen): 0.356071
+SD accuracy (until FC6, frozen): 0.028029

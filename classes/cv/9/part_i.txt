@@ -1,0 +1,87 @@
+part_i.txt
+
+>> part_i
+     1
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 1: 0.092500
+     2
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 2: 0.122500
+     3
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 3: 0.122500
+     4
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 4: 0.135000
+     5
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 5: 0.155000
+     6
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 6: 0.170000
+     7
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 7: 0.140000
+     8
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 8: 0.135000
+     9
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 9: 0.160000
+    10
+
+Initializing input data normalization.
+|========================================================================================|
+|  Epoch  |  Iteration  |  Time Elapsed  |  Mini-batch  |  Mini-batch  |  Base Learning  |
+|         |             |   (hh:mm:ss)   |   Accuracy   |     Loss     |      Rate       |
+|========================================================================================|
+Accuracy of model 10: 0.177500
+
+Mean accuracy: 0.141000
+SD accuracy: 0.025473
+>> 
