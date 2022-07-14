@@ -1,0 +1,11 @@
+results2.txt
+Author: Shane Riley
+
+The plot is consistent with expectation. First, the performance on the training
+data outperforms that of the test data for KNN and SVM separately, which is
+typical of trained models. It is also expected that the SVM accuracies will
+not vary with 'k', since that is a hyperparameter for KNN. On the KNN-side,
+it is clear that low values of k are overfitting, since performance on test
+data is much lower than on the training data. If one were to tune the value
+of k to provide the best performance on testing data, they would choose k = 13.
+In general, however, the SVM model outperforms the KNN models handedly.

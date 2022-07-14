@@ -1,0 +1,56 @@
+answers.txt
+Shane Riley
+Course Name Removed
+Homework 4
+2/9/2022
+
+For which of the three representations is the within-between ratio smallest?
+Out of the three representations (BOW, texture concat and texture mean),
+BOW is able to reach the lowest ratio, but only with the right hyperparameters (number of clusters, number of keypoints).
+
+Does the answer to this question depend on the value of k that you use?
+Changing k does change the BOW ratios, with k=2 consistently outperforming the other options
+
+Does it depend on the number of keypoints you extract? (Try 500, 1000, 2000, 3000.)
+Like k, changing the number of keypoints does change the outcome ratio. In this test, 1000 keypoints before non-max suppression
+with k = 2 reveals the best ratio overall.
+
+Which of the three types of descriptors that you used is the best one? How can you tell?
+Bag-of-words appears to have the greatest potential, since it is capable of producing
+the highest ratios. With that said, BOW has hyperparameters (num keys and k)
+that if badly tuned, can make the ratio result much worse than texture mean, which is consistently effective.
+
+Is this what you expected? Why or why not?
+I expected Bag-of-Words to outperform the texture-based methods, but I did not expect the margin to be so small, and the result to be so sensitive to hyperparameters.
+
+STDOUT:
+Note: The number of keypoints is before non-max suppression is executed
+
+>> compare_representations (N_KEYS = 500)
+Ratio for BOW k=2: 0.552159
+Ratio for BOW k=5: 0.982201
+Ratio for BOW k=10: 0.869055
+Ratio for BOW k=50: 0.985549
+Ratio for texture concat: 0.942568
+Ratio for texture mean: 0.563118
+>> compare_representations (N_KEYS = 1000)
+Ratio for BOW k=2: 0.481862
+Ratio for BOW k=5: 0.928493
+Ratio for BOW k=10: 0.915791
+Ratio for BOW k=50: 0.984545
+Ratio for texture concat: 0.942568
+Ratio for texture mean: 0.563118
+>> compare_representations (N_KEYS = 2000)
+Ratio for BOW k=2: 0.682997
+Ratio for BOW k=5: 0.872629
+Ratio for BOW k=10: 0.913384
+Ratio for BOW k=50: 0.920772
+Ratio for texture concat: 0.942568
+Ratio for texture mean: 0.563118
+>> compare_representations (N_KEYS = 3000)
+Ratio for BOW k=2: 0.605793
+Ratio for BOW k=5: 0.908113
+Ratio for BOW k=10: 0.887641
+Ratio for BOW k=50: 0.894686
+Ratio for texture concat: 0.942568
+Ratio for texture mean: 0.563118

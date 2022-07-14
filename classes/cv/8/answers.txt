@@ -1,0 +1,18 @@
+answers.txt
+Author: Shane Riley
+Course: Course Name Removed
+Date: 4/3/2022
+Homework 8
+
+STDOUT:
+
+Hinge losses:
+   15.2570   10.6493   13.0672
+
+Cross-Entropy losses:
+    7.2079    5.6219    6.0902
+
+EXPLANATION:
+
+As it can be seen, the matrix W2 produces the least loss both in hinge and
+cross-entropy formulations. As a result, W2 is selected as the best.

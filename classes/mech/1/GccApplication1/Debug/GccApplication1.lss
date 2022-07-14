@@ -1,0 +1,138 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000104  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000000b0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000104  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000134  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000174  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000067c  00000000  00000000  00000194  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005f8  00000000  00000000  00000810  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000001ff  00000000  00000000  00000e08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001008  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000036d  00000000  00000000  0000102c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000010  00000000  00000000  00001399  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
+  78:	0c 94 56 00 	jmp	0xac	; 0xac <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <main>:
+#include <avr/io.h>
+
+int main(void)
+{
+	 	
+	DDRD = 0b11000000;  // set bits PD7-PD6 as output, PD5-PD0 as input (this covers Pins 3 and 4 as needed for inputs, and 6 and 7 as needed for outputs)
+  80:	80 ec       	ldi	r24, 0xC0	; 192
+  82:	8a b9       	out	0x0a, r24	; 10
+		// Follows a practice of making unused pins to be input (safer)
+	PORTD = 0b11000000; // set output bits on PORTD so that all outputs are off (they are wired as active low)
+  84:	8b b9       	out	0x0b, r24	; 11
+    // P R O G R A M L O O P
+    // ============================================
+	while(1)
+    {
+				
+       	if (PIND & 0b00001000) // Check the status of Switch 1.  
+  86:	4b 9b       	sbis	0x09, 3	; 9
+  88:	04 c0       	rjmp	.+8      	; 0x92 <main+0x12>
+		   // This line checks the switch status by doing a Boolean operation between PIND (where the switch is connected) and a binary number that targets the 
+		   // single pin that we are trying to read (Pin 3). For more on Boolean operations and "single bit addressing", see the C Programming slides.
+		   // The argument of the If is TRUE only if the switch is closed (and Pin3 is a high voltage), in which case we want to turn on LED 1.
+		{
+			PORTD = PORTD & 0b10111111; // Turn on LED 1. 
+  8a:	8b b1       	in	r24, 0x0b	; 11
+  8c:	8f 7b       	andi	r24, 0xBF	; 191
+  8e:	8b b9       	out	0x0b, r24	; 11
+  90:	03 c0       	rjmp	.+6      	; 0x98 <main+0x18>
+			// unchanged (i.e. this line does not affect bit PD7, the other LED).
+			// The result is that since the LED on pin 6 of PORTD is wired as active low, this line causes it to turn on.
+		}
+		else 
+		{
+			PORTD = PORTD | 0b01000000;  // Turn off LED 1. 
+  92:	8b b1       	in	r24, 0x0b	; 11
+  94:	80 64       	ori	r24, 0x40	; 64
+  96:	8b b9       	out	0x0b, r24	; 11
+			// More Boolean arithmetic to cause PD6 to go high (a logical OR is performed between data in PORTD and a binary number that targets pin PD6), 
+			// which causes LED 1 to be off and other bits, specifically LED 2, are unchanged.
+		}
+		// Repeat for LED and Switch 2
+		if (PIND & 0b00010000) // Check the status of Switch 2.
+  98:	4c 9b       	sbis	0x09, 4	; 9
+  9a:	04 c0       	rjmp	.+8      	; 0xa4 <main+0x24>
+			// Same as above but pin PD4 is the target.
+		{
+			PORTD = PORTD & 0b01111111;  // Turn on LED 2.
+  9c:	8b b1       	in	r24, 0x0b	; 11
+  9e:	8f 77       	andi	r24, 0x7F	; 127
+  a0:	8b b9       	out	0x0b, r24	; 11
+  a2:	f1 cf       	rjmp	.-30     	; 0x86 <main+0x6>
+			// Same as in first If but pin PD7 is the target.
+		}
+		else 
+		{
+			PORTD = PORTD | 0b10000000; // Turn off LED 2.
+  a4:	8b b1       	in	r24, 0x0b	; 11
+  a6:	80 68       	ori	r24, 0x80	; 128
+  a8:	8b b9       	out	0x0b, r24	; 11
+  aa:	ed cf       	rjmp	.-38     	; 0x86 <main+0x6>
+
+000000ac <_exit>:
+  ac:	f8 94       	cli
+
+000000ae <__stop_program>:
+  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>

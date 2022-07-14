@@ -1,4 +1,4 @@
-# Palindrome number
+## 9. Palindrome number
 from math import floor
 class Solution:
     def isPalindrome(self, x: int) -> bool:

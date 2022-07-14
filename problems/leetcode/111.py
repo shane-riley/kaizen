@@ -1,4 +1,4 @@
-# Minimum Depth of Binary Tree
+## 111. Minimum Depth of Binary Tree
 from math import inf
 from typing import Optional
 # Definition for a binary tree node.

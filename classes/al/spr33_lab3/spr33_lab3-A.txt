@@ -1,0 +1,10 @@
+Shane Riley
+CS al
+Lab 3
+
+A.1: The address of x is 0x10010000
+A.2: The address of x is 0x10010002
+A.3: The address of x is 0x10010004
+A.4: The number printed is 2752554
+A.5: A runtime exception is thrown: fetch address not aligned on word boundary 0x10010002
+A.6: y gets overwritten as 0

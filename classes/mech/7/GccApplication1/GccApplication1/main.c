@@ -1,0 +1,227 @@
+/*
+ * GccApplication1.c
+ *
+ * Created: 3/2/2022 3:42:13 PM
+ * Author : Shane
+ */ 
+
+#include <avr/io.h>
+
+// WORKING DELAY
+
+// SWITCH is PC0 (ACTIVE LOW)
+// LEDS are PB0, PB1 (ACTIVE LOW)
+// MOTOR PINS are PD4-7
+// ASSUME 12 STEPS PER QUARTER TURN
+#define STEPS_PER_QUARTER 12
+
+// wait (borrowed from lab document)
+void wait(volatile int multiple);
+
+// Step CW
+void step_CW();
+
+// Step CCW
+void step_CCW();
+
+// Switch fxns
+int switch_pressed();
+void wait_for_switch();
+
+// LED fxns
+void forward();
+void backward();
+void stop();
+
+// Global variable for phase state
+int phase_step = 1;
+
+int main(void)
+{
+	
+	// SETUP
+	
+	// B is output
+	DDRB = 0xFF;
+	
+	// D is output
+	DDRD = 0xFF;
+	
+	// C is input
+	DDRC = 0x00;
+	
+	// LEDs off
+	PORTB = 0x03;
+	
+	//while(1) {
+		//if (switch_pressed()) {
+			//forward();
+		//} else {
+			//backward();
+		//}
+	//}
+	
+    /* Replace with your application code */
+    while (1) 
+    {
+		// Wait for the press
+		stop();  // turns off LED's
+		wait_for_switch();  // Waits to begin
+		// Init state and loop through actions
+		for (int state = 0; state < 6 * STEPS_PER_QUARTER + 1; state++) {
+			
+			
+			if (state < 2 * STEPS_PER_QUARTER) {
+				// 180deg clockwise in five seconds
+				forward();
+				step_CCW();
+				wait(5000 / (2 * STEPS_PER_QUARTER));
+			} else if (state == 2 * STEPS_PER_QUARTER) {
+				// Wait
+				stop();
+				wait(1000);
+			} else {
+				// 360 counter clockwise in five seconds
+				backward();
+				step_CW();
+				wait(5000 / (4 * STEPS_PER_QUARTER));
+			}
+			
+			// Extra check
+			if (switch_pressed()) {
+				// Move +45 degrees, -90 degrees, +45 degrees, in three seconds total
+				for (int i = 0; i < 3; i++) {
+					for (int int_state = 0; int_state < 2 * STEPS_PER_QUARTER; int_state++) {
+						if (int_state < STEPS_PER_QUARTER / 2 || int_state >= 3 * STEPS_PER_QUARTER / 2) {
+							forward();
+							step_CCW();
+							wait(1000 / (2 * STEPS_PER_QUARTER));
+						} else {
+							backward();
+							step_CW();
+							wait(1000 / (2 * STEPS_PER_QUARTER));
+						}
+					}
+				}
+			}
+		}
+		
+		
+		// Loop through actions
+		
+		// Check for subroutine
+    }
+}
+
+// ============================================
+// S U B R O U T I N E S
+// ============================================
+
+
+void wait(volatile int multiple) {
+	// This subroutine creates a delay equal to multiple*T, where T is 1 msec
+	// Assumes a 16MHz clock frequency ? FOR DIFFERENT CLOCK, CHANGE THE COUNT EXIT VALUE IN WHILE LOOP
+	while (multiple > 0) {
+		TCCR0A = 0x00; // clears WGM00 and WGM01 (bits 0 and 1) to ensure Timer/Counter is in normal mode.
+		TCNT0 = 0; // preload value for testing on count = 250
+		TCCR0B = 0b00000011; //1<<CS01 | 1<<CS00; TCCR0B = 0x03; //
+		// Start TIMER0, Normal mode, crystal clock, prescaler = 64
+		while (TCNT0 < 0xFA); // exits when count = 250 (requires preload of 0 to make count = 250) CHANGE THIS VALUE FOR CLOCK OTHER THAN 16MHz
+		TCCR0B = 0x00; // Stop TIMER0
+		multiple--;
+	}
+} // end wait()
+
+void wait_for_switch() {
+	int i;
+	while(!switch_pressed()) {
+		i = 1;
+	}
+}  // end wait_for_switch()
+
+int switch_pressed() {
+	return !(PINC & 0x01);
+}  // end switch_pressed()
+
+void forward() {
+	PORTB = 0x01;
+}  // end forward()
+
+void backward() {
+	PORTB = 0x02;
+}  // end backward()
+
+void stop() {
+	PORTB = 0x03;
+}  // end stop()
+
+void step_CCW() {
+	
+	switch(phase_step) {
+		case 1:
+		PORTD = 0b00010000;
+		phase_step = 2;
+		break;
+		
+		case 2:
+		PORTD = 0b01000000;
+		phase_step = 3;
+		break;
+		
+		case 3:
+		PORTD = 0b00100000;
+		phase_step = 4;
+		break;
+		
+		case 4:
+		PORTD = 0b10000000;
+		phase_step = 1;
+		break;
+	}
+}  // end step_CCW()
+
+void step_CW() {
+	
+	switch(phase_step) {
+		case 1:
+		PORTD = 0b00100000;
+		phase_step = 4;
+		break;
+		
+		case 2:
+		PORTD = 0b10000000;
+		phase_step = 1;
+		break;
+		
+		case 3:
+		PORTD = 0b00010000;
+		phase_step = 2;
+		break;
+		
+		case 4:
+		PORTD = 0b01000000;
+		phase_step = 3;
+		break;
+	}
+}  // end step_CW()
+
+/*
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+
+Me when I look at my code
+
+*/
